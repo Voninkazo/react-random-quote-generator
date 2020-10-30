@@ -33874,14 +33874,16 @@ const url = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
 function QuotesGenerator() {
   const [quoteTitle, setQuoteTitle] = (0, _react.useState)('');
   const [quoteAuth, setQuoteAuth] = (0, _react.useState)('');
-  const [quoteGenre, setQuoteGenre] = (0, _react.useState)('');
+  const [genre, setQuoteGenre] = (0, _react.useState)('');
 
   const fetchQuotes = async () => {
     const res = await fetch(url);
     const data = await res.json();
+    console.log(data);
     setQuoteTitle(data.quote.quoteText);
     setQuoteAuth(data.quote.quoteAuthor);
-    setQuoteGenre(data.quote.genre);
+    setQuoteGenre(data.quote.quoteGenre);
+    console.log(data.quote.quoteGenre);
   };
 
   (0, _react.useEffect)(() => {
@@ -33892,15 +33894,23 @@ function QuotesGenerator() {
     fetchQuotes();
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "list-item"
+  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
+    className: "btn-random",
     onClick: handleClick
-  }, "Next quote"), /*#__PURE__*/_react.default.createElement("p", null, quoteTitle), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "Random")), /*#__PURE__*/_react.default.createElement("li", null, "icon")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "randome-quote"
+  }, /*#__PURE__*/_react.default.createElement("p", null, quoteTitle), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/authors/${quoteAuth}`
   }, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
+    className: "btn-author",
     value: quoteAuth
-  }, quoteAuth)), /*#__PURE__*/_react.default.createElement("p", null, quoteGenre));
+  }, `${quoteAuth} 
+                    ${genre}
+                    `))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesByAuthor.js":[function(require,module,exports) {
 "use strict";
@@ -33937,9 +33947,17 @@ function QuotesByAuthor() {
   (0, _react.useEffect)(() => {
     fetchMultipleQuotes();
   }, []);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, allQuotes.map(quote => /*#__PURE__*/_react.default.createElement("li", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "otherQuotes"
+  }, /*#__PURE__*/_react.default.createElement("h2", {
+    className: "author"
+  }, authorName), /*#__PURE__*/_react.default.createElement("ul", null, allQuotes.map(quote => /*#__PURE__*/_react.default.createElement("li", {
     key: quote.id
-  }, quote.quoteText))));
+  }, quote.quoteText))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    type: "button"
+  }, "Home page")));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"App.js":[function(require,module,exports) {
 "use strict";

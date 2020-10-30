@@ -1,5 +1,5 @@
 import React,{ useEffect,useState } from "react";
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 
 
 export default function QuotesByAuthor() {
@@ -21,7 +21,8 @@ export default function QuotesByAuthor() {
         },[])
 
     return (
-        <div>
+        <div className="otherQuotes">
+            <h2 className="author">{authorName}</h2>
             <ul>
                 {
                 allQuotes.map((quote) => 
@@ -30,6 +31,9 @@ export default function QuotesByAuthor() {
                     ))
             }
             </ul>
+            <Link to="/">
+                <button type="button">Home page</button>
+            </Link>
         </div>
     )
 }

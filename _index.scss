@@ -1,6 +1,109 @@
 body {
-    font-family: 'Roboto';
+    font-family: 'Ralwey';
     p {
         font-size: 18px;
+    }
+}
+
+div#root {
+    max-width: 1114px;
+    margin: auto;
+}
+
+ul.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    list-style: none;
+    .btn-random {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #4F4F4F;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-family: 'Ralwey';
+        text-transform: lowercase;
+    }
+    li {
+        margin-inline-start: 11px;
+    }
+}
+
+div.randome-quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 40px;
+        /* or 43px */
+        color: #000000;
+        border-left: 6px solid #F7DF94;
+        padding-left: 99px;
+        word-break: break-all;
+        margin-bottom: calc(159px / 2);
+        margin: 0;
+    }
+    .btn-author {
+        font-size: 24px;
+        line-height: 28px;
+        color: #4F4F4F;
+        font-weight: bold;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: calc(159px / 2);
+        padding-top: 50px;
+        padding-left: 29px;
+        padding-bottom: 50px;
+        padding-right: 534px;
+        white-space: nowrap;
+        margin-left: 99px;
+    }
+    .btn-author:hover {
+        background: #333333;
+        transition: background 1s;
+        color: #F2F2F2;
+    }
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #333333;
+    font-family: 'Raleway';
+    padding-left: 99px;
+}
+
+.otherQuotes {
+    max-width: 1114px;
+    margin: auto;
+    padding-top: 32px;
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        li {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 120%;
+            border-left: 6px solid #F7DF94;
+            padding-inline-start: 99px;
+            /* or 43px */
+            color: #000000;
+            margin-top: calc(140px / 2);
+            margin-bottom: calc(140px / 2);
+        }
     }
 }

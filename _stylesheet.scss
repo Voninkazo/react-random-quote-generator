@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('./fonts/raleway-regular.woff2') format('woff2'), url('./fonts//raleway-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('./fonts/raleway-500.woff2') format('woff2'), url('./fonts/raleway-500.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}

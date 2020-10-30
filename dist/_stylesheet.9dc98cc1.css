@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("/raleway-regular.f061d3e5.woff2") format("woff2"), url("/raleway-regular.c007b01f.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "raleway";
+  src: url("/raleway-500.b92737a9.woff2") format("woff2"), url("/raleway-500.958c9fac.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*# sourceMappingURL=/_stylesheet.9dc98cc1.css.map */

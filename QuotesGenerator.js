@@ -7,14 +7,16 @@ const url ="https://quote-garden.herokuapp.com/api/v2/quotes/random";
 export default function QuotesGenerator() {
     const [quoteTitle,setQuoteTitle] = useState('');
     const [quoteAuth, setQuoteAuth] = useState('');
-    const [quoteGenre, setQuoteGenre] = useState('');
+    const [genre, setQuoteGenre] = useState('');
 
     const fetchQuotes = async() => {
         const res = await fetch(url);
         const data = await res.json();
+        console.log(data)
         setQuoteTitle(data.quote.quoteText)
         setQuoteAuth(data.quote.quoteAuthor)
-        setQuoteGenre(data.quote.genre);
+        setQuoteGenre(data.quote.quoteGenre);
+        console.log(data.quote.quoteGenre)
     }
 
     useEffect(() => {
@@ -27,16 +29,26 @@ export default function QuotesGenerator() {
 
     return (
         <div>
-            <button type="button" onClick={handleClick}>Next quote</button>
-            <p>{quoteTitle}</p>
-            <Link to={`/authors/${quoteAuth}`}>
-            <button 
-                type="button" 
-                value={quoteAuth}
-               >{quoteAuth}
-            </button>
-            </Link>
-            <p>{quoteGenre}</p>
+            <ul className="list-item">
+                <li>
+                    <button type="button" className="btn-random" onClick={handleClick}>
+                        Random
+                    </button>
+                </li>
+                    <li>
+                        icon
+                    </li>
+            </ul>
+            <div className="randome-quote">
+                <p>{quoteTitle}</p>
+                <Link to={`/authors/${quoteAuth}`}>
+                <button type="button" className="btn-author" value={quoteAuth}>
+                    {`${quoteAuth} 
+                    ${genre}
+                    `}
+                </button>
+                </Link>
+            </div>
         </div>
     )
 }
