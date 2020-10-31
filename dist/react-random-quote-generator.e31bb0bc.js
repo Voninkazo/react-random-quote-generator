@@ -33853,7 +33853,9 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"QuotesGenerator.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"icons/cached.svg":[function(require,module,exports) {
+module.exports = "/cached.08667652.svg";
+},{}],"QuotesGenerator.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33864,6 +33866,10 @@ exports.default = QuotesGenerator;
 var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
+
+var _cached = _interopRequireDefault(require("./icons/cached.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -33900,7 +33906,14 @@ function QuotesGenerator() {
     type: "button",
     className: "btn-random",
     onClick: handleClick
-  }, "Random")), /*#__PURE__*/_react.default.createElement("li", null, "icon")), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Random")), /*#__PURE__*/_react.default.createElement("li", {
+    style: {
+      display: "contents"
+    }
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _cached.default,
+    alt: "cached"
+  }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "randome-quote"
   }, /*#__PURE__*/_react.default.createElement("p", null, quoteTitle), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/authors/${quoteAuth}`
@@ -33912,7 +33925,7 @@ function QuotesGenerator() {
                     ${genre}
                     `))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesByAuthor.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./icons/cached.svg":"icons/cached.svg"}],"QuotesByAuthor.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33924,11 +33937,15 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _cached = _interopRequireDefault(require("./icons/cached.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function QuotesByAuthor() {
+function QuotesByAuthor(props) {
   const [allQuotes, setAllQuotes] = (0, _react.useState)([]);
   const {
     authorName
@@ -33949,17 +33966,31 @@ function QuotesByAuthor() {
   }, []);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "otherQuotes"
-  }, /*#__PURE__*/_react.default.createElement("h2", {
-    className: "author"
-  }, authorName), /*#__PURE__*/_react.default.createElement("ul", null, allQuotes.map(quote => /*#__PURE__*/_react.default.createElement("li", {
-    key: quote.id
-  }, quote.quoteText))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "btn-container"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
+  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("p", {
+    className: "homepage-btn"
+  }, " Home page"))), /*#__PURE__*/_react.default.createElement("li", {
+    style: {
+      display: "contents"
+    }
   }, /*#__PURE__*/_react.default.createElement("button", {
-    type: "button"
-  }, "Home page")));
+    type: "button",
+    className: "btn-random"
+  }, "Random"), /*#__PURE__*/_react.default.createElement("img", {
+    src: _cached.default,
+    alt: "cached"
+  }))), /*#__PURE__*/_react.default.createElement("h2", {
+    className: "author"
+  }, authorName), /*#__PURE__*/_react.default.createElement("ul", {
+    className: "quotes-container"
+  }, allQuotes.map(quote => /*#__PURE__*/_react.default.createElement("li", {
+    key: quote.id
+  }, `"${quote.quoteText}"`))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./icons/cached.svg":"icons/cached.svg"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34024,7 +34055,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50965" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50936" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

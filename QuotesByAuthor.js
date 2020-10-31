@@ -1,8 +1,9 @@
 import React,{ useEffect,useState } from "react";
 import {useParams, Link} from 'react-router-dom';
+import IconCached from './icons/cached.svg';
 
 
-export default function QuotesByAuthor() {
+export default function QuotesByAuthor(props) {
     const [allQuotes,setAllQuotes] = useState([]);
     const { authorName } = useParams();
     console.log(authorName);
@@ -22,18 +23,28 @@ export default function QuotesByAuthor() {
 
     return (
         <div className="otherQuotes">
+            <ul className="btn-container">
+            <Link to="/">
+                <li>
+                    <p className="homepage-btn"> Home page</p>
+                </li>
+            </Link>
+                <li style={{display: "contents"}}>
+                    <button type="button" className="btn-random">
+                        Random
+                    </button>
+                    <img src={IconCached} alt="cached"/>
+                </li>
+            </ul>
             <h2 className="author">{authorName}</h2>
-            <ul>
+            <ul className="quotes-container">
                 {
                 allQuotes.map((quote) => 
                     (
-                    <li key={quote.id}>{quote.quoteText}</li>
+                    <li key={quote.id}>{`"${quote.quoteText}"`}</li>
                     ))
             }
             </ul>
-            <Link to="/">
-                <button type="button">Home page</button>
-            </Link>
         </div>
     )
 }

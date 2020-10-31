@@ -12,5 +12,12 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("/montserrat.5cd1c24f.woff2") format("woff2"), url("/montserrat.4ce29a38.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
 /*# sourceMappingURL=/_stylesheet.9dc98cc1.css.map */

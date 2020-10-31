@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import IconCached from './icons/cached.svg';
 
 
 const url ="https://quote-garden.herokuapp.com/api/v2/quotes/random";
@@ -35,8 +36,8 @@ export default function QuotesGenerator() {
                         Random
                     </button>
                 </li>
-                    <li>
-                        icon
+                    <li style={{display: "contents"}}>
+                        <img src={IconCached} alt="cached"/>
                     </li>
             </ul>
             <div className="randome-quote">

@@ -1,3 +1,8 @@
+:root {
+    --main-left-space: 99px;
+    --list-margin-vertical: calc(140px / 2);
+}
+
 body {
     font-family: 'Ralwey';
     p {
@@ -5,47 +10,79 @@ body {
     }
 }
 
-div#root {
+$border-colr: #F7DF94;
+@mixin reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin layout-container {
     max-width: 1114px;
     margin: auto;
+}
+
+.homepage-btn {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000000;
+    font-size: 18px;
+    line-height: 22px;
+    margin-inline-start: var(--main-left-space);
+}
+
+div#root,
+.otherQuotes {
+    @include layout-container();
+}
+
+div#root {
+    padding-top: 31px;
+}
+
+ul {
+    @include reset-list();
 }
 
 ul.list-item {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding: 0;
-    list-style: none;
-    .btn-random {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-        color: #4F4F4F;
-        background: none;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        font-family: 'Ralwey';
-        text-transform: lowercase;
-    }
+    align-items: center;
     li {
         margin-inline-start: 11px;
     }
+}
+
+.btn-random {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #4F4F4F;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Ralwey';
+    text-transform: lowercase;
 }
 
 div.randome-quote {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-block-start: 227px;
+    padding-block-end: 213px;
     p {
         text-align: center;
         font-weight: 500;
         font-size: 36px;
         line-height: 40px;
-        /* or 43px */
         color: #000000;
-        border-left: 6px solid #F7DF94;
-        padding-left: 99px;
+        border-left: 6px solid $border-colr;
+        padding-left: var(--main-left-space);
         word-break: break-all;
         margin-bottom: calc(159px / 2);
         margin: 0;
@@ -65,7 +102,7 @@ div.randome-quote {
         padding-bottom: 50px;
         padding-right: 534px;
         white-space: nowrap;
-        margin-left: 99px;
+        margin-left: var(--main-left-space);
     }
     .btn-author:hover {
         background: #333333;
@@ -80,16 +117,12 @@ h2 {
     line-height: 42px;
     color: #333333;
     font-family: 'Raleway';
-    padding-left: 99px;
+    padding-left: var(--main-left-space);
 }
 
 .otherQuotes {
-    max-width: 1114px;
-    margin: auto;
-    padding-top: 32px;
-    ul {
-        list-style: none;
-        padding: 0;
+    padding-block-end: 213px;
+    ul.quotes-container {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -98,12 +131,33 @@ h2 {
             font-weight: 500;
             font-size: 36px;
             line-height: 120%;
-            border-left: 6px solid #F7DF94;
-            padding-inline-start: 99px;
+            border-left: 6px solid $border-colr;
+            padding-inline-start: var(--main-left-space);
             /* or 43px */
             color: #000000;
-            margin-top: calc(140px / 2);
-            margin-bottom: calc(140px / 2);
+            margin-top: var(--list-margin-vertical);
+            margin-bottom: var(--list-margin-vertical);
+            background-color: #dadada;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            border-radius: 5px;
+            box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
         }
     }
+    ul.btn-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+footer>p {
+    font-family: 'Montserrat';
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #A9A9A9;
 }
