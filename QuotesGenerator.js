@@ -30,18 +30,21 @@ export default function QuotesGenerator() {
 
     return (
         <div>
-            <ul className="list-item">
-                <li>
-                    <button type="button" className="btn-random" onClick={handleClick}>
-                        Random
-                    </button>
-                </li>
-                    <li style={{display: "contents"}}>
-                        <img src={IconCached} alt="cached"/>
+            <div className="header-container">
+                <h1>Today's Quote</h1>
+                <ul className="list-item">
+                    <li>
+                        <button type="button" className="btn-random" onClick={handleClick}>
+                            Random
+                        </button>
                     </li>
-            </ul>
+                        <li style={{display: "contents"}}>
+                            <img src={IconCached} alt="cached"/>
+                        </li>
+                </ul>
+            </div>
             <div className="randome-quote">
-                <p>{quoteTitle}</p>
+                <p id="quote">{`"${quoteTitle}"`}</p>
                 <Link to={`/authors/${quoteAuth}`}>
                 <button type="button" className="btn-author" value={quoteAuth}>
                     {`${quoteAuth} 

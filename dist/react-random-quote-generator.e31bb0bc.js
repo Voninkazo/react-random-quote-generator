@@ -33900,7 +33900,9 @@ function QuotesGenerator() {
     fetchQuotes();
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "header-container"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Today's Quote"), /*#__PURE__*/_react.default.createElement("ul", {
     className: "list-item"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
@@ -33913,9 +33915,11 @@ function QuotesGenerator() {
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _cached.default,
     alt: "cached"
-  }))), /*#__PURE__*/_react.default.createElement("div", {
+  })))), /*#__PURE__*/_react.default.createElement("div", {
     className: "randome-quote"
-  }, /*#__PURE__*/_react.default.createElement("p", null, quoteTitle), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    id: "quote"
+  }, `"${quoteTitle}"`), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/authors/${quoteAuth}`
   }, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
