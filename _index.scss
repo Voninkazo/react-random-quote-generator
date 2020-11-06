@@ -5,9 +5,9 @@
 
 body {
     font-family: 'Ralwey';
-    background-color: #000000;
     p {
         font-size: 18px;
+        background-color: #000000;
     }
 }
 
@@ -43,7 +43,7 @@ h1 {
     padding: 1rem 2rem;
     border-radius: 5px;
     cursor: pointer;
-    color: #000000;
+    color: #F2F2F2;
     font-size: 18px;
     line-height: 22px;
     margin-inline-start: var(--main-left-space);
@@ -56,6 +56,7 @@ div#root,
 
 div#root {
     padding-top: 31px;
+    background-color: #000000;
 }
 
 ul {
@@ -133,7 +134,7 @@ h2 {
     font-weight: bold;
     font-size: 36px;
     line-height: 42px;
-    color: #333333;
+    color: #F2F2F2;
     font-family: 'Raleway';
     padding-left: var(--main-left-space);
 }
